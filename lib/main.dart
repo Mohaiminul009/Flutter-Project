@@ -15,7 +15,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Practice_Container(),
+      home: Practice_TabBar(),
     );
   }
 }
@@ -467,6 +467,87 @@ class Practice_Cardview extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+// Navigation Bar
+class Practice_navigationBar extends StatefulWidget {
+  const Practice_navigationBar({Key? key}) : super(key: key);
+
+  @override
+  State<Practice_navigationBar> createState() => _Practice_navigationBarState();
+}
+
+class _Practice_navigationBarState extends State<Practice_navigationBar> {
+  var _currentState = 0;
+  final pages = [
+    MyFirstWidget(),
+    MySecondWidget(),
+    MyThirdWidget()
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentState,
+        items: [
+        BottomNavigationBarItem(
+          label: "Label 1",
+          backgroundColor: Colors.red,
+          icon: Icon(Icons.add_moderator)),
+          BottomNavigationBarItem(
+          label: "Label 2",
+          backgroundColor: Colors.blue,
+          icon: Icon(Icons.add_a_photo)),
+          BottomNavigationBarItem(
+          label: "Label 3",
+          backgroundColor: Colors.green,
+          icon: Icon(Icons.add_alert_sharp))
+      ],
+      onTap: (index) {
+        setState(() {
+          _currentState = index;
+        });
+      },
+      ),
+      body: pages[_currentState],
+    );
+  }
+}
+
+// Tab bar
+class Practice_TabBar extends StatelessWidget {
+  const Practice_TabBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3, 
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Tab Bar"),
+          centerTitle: true,
+          bottom: TabBar(tabs: [
+            Tab(
+              text: "Tab 1",
+              icon: Icon(Icons.tab)
+            ),
+            Tab(
+              text: "Tab 2",
+              icon: Icon(Icons.table_view_outlined)
+            ),
+            Tab(
+              text: "Tab 3",
+              icon: Icon(Icons.table_rows)
+            )
+          ]),
+        ),
+        body: TabBarView(children: [
+          MyFirstWidget(),
+          MySecondWidget(),
+          MyThirdWidget()
+        ]),
+      ));
   }
 }
 
