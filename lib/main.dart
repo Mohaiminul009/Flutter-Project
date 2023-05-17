@@ -3,11 +3,15 @@ import 'package:flutterproject/Additional-Page/first.dart';
 import 'package:flutterproject/Additional-Page/second.dart';
 import 'package:flutterproject/Additional-Page/third.dart';
 import 'package:flutterproject/Additional-Page/hero.dart';
+import 'package:flutterproject/border.dart';
 import 'package:flutterproject/navigationBar.dart';
 import 'package:flutterproject/pageView.dart';
 import 'package:flutterproject/sliverAppBar.dart';
 import 'package:flutterproject/tabBar.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
+
+import 'gradientColor.dart';
+import 'imagePicker.dart';
 
 void main() {
   runApp(MyWidget2());
@@ -20,7 +24,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Practice_TabBar(),
+      home: Practice_Border(),
     );
   }
 }
@@ -37,7 +41,7 @@ class _MyWidget2State extends State<MyWidget2> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Practice_SliverAppBar(),
+      home: Practice_ImagePicker(),
     );
   }
 }
