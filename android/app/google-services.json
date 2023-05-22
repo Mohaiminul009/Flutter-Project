@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "292981899886",
+    "project_id": "student-information-ed15d",
+    "storage_bucket": "student-information-ed15d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292981899886:android:1eeba3ebe19b20c4f85c7f",
+        "android_client_info": {
+          "package_name": "com.example.flutterproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292981899886-pkk2lvv6v9jasurjq7543hrhpj54m3ii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCtncQRIpeWTkrOuF0Ji5vppeDmT7KPIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292981899886-pkk2lvv6v9jasurjq7543hrhpj54m3ii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

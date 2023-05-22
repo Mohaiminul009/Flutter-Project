@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'dart:html';
 import 'package:flutterproject/Additional-Page/first.dart';
 import 'package:flutterproject/Additional-Page/second.dart';
 import 'package:flutterproject/Additional-Page/third.dart';
@@ -10,11 +12,14 @@ import 'package:flutterproject/sliverAppBar.dart';
 import 'package:flutterproject/tabBar.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
+import 'CRUD/create.dart';
 import 'gradientColor.dart';
 import 'imagePicker.dart';
 
-void main() {
-  runApp(MyWidget2());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(StudentInformation());
 }
 
 class MyWidget extends StatelessWidget {
@@ -24,7 +29,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Practice_Border(),
+      home: Practice_GradientColor(),
     );
   }
 }
@@ -45,3 +50,21 @@ class _MyWidget2State extends State<MyWidget2> {
     );
   }
 }
+
+class StudentInformation extends StatefulWidget {
+  const StudentInformation({Key? key}) : super(key: key);
+
+  @override
+  State<StudentInformation> createState() => _StudentInformationState();
+}
+
+class _StudentInformationState extends State<StudentInformation> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: CreateInformation(),
+    );
+  }
+}
+
